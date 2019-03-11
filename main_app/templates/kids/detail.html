@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{kid.name}}</span>
+            <p>Lastname: {{kid.last_name}}</p>
+            <p>Description: {{kid.description}}</p>
+            {%if kid.age > 0%}
+            <p>Age: {{kid.age}}</p>
+            {%else%}
+            <p>Age: new born</p>
+            {%endif%}
+        </div>
+    </div>
+{% endblock %}
