@@ -11,5 +11,9 @@
             <p>Age: new born</p>
             {%endif%}
         </div>
+        <div class="card-action">
+            <a href="{% url 'kids_update' kid.id %}">Edit</a>
+            <a href="{% url 'kids_delete' kid.id %}">Delete</a>
+        </div>
     </div>
 {% endblock %}
