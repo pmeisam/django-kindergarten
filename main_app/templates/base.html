@@ -1,6 +1,7 @@
 {%load static%}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,10 @@
     <title>Kindergarten</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </head>
+
 <body>
     <header class="navbar-fixed">
         <nav>
@@ -32,8 +36,22 @@
         {% block content %}
         {% endblock %}
     </main>
-  	<footer class="page-footer">
-       <div class="right">All Rights Reserved, &copy; 2019 Kindergarten Collector &nbsp;</div>
+    <footer class="page-footer">
+        <div class="right">All Rights Reserved, &copy; 2019 Kindergarten Collector &nbsp;</div>
     </footer>
+    <script>
+        var dateEl = document.getElementById('id_date');
+        M.Datepicker.init(dateEl, {
+            format: 'yyyy-mm-dd',
+            defaultDate: new Date(),
+            setDefaultDate: true,
+            autoClose: true
+        });
+
+        // add additional JS to initialize select below
+        var selectEl = document.getElementById('id_meal');
+        M.FormSelect.init(selectEl);
+    </script>
 </body>
+
 </html>
