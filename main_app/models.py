@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+from datetime import date
+from django.contrib.auth.models import User
 # Create your models here.
 
 MEALS = (
@@ -22,6 +24,7 @@ class Kid(models.Model):
     age = models.IntegerField()
     description = models.TextField(max_length=250)
     toys = models.ManyToManyField(Toy)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     def get_absolute_url(self):
         return reverse('detail', kwargs={"kid_id": self.id})
     

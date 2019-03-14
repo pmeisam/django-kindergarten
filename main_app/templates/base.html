@@ -22,18 +22,27 @@
                 </ul>
                 <ul class="right">
                     <li><a href="/about">About</a></li>
-                </ul>
-                <ul class="right">
+                
+                {% if user.is_authenticated %}
+                
                     <li><a href="{% url 'toys_create' %}">Add a Toy</a></li>
-                </ul>
-                <ul class="right">
+                
+                
                     <li><a href="{% url 'toys' %}">View All Toys</a></li>
-                </ul>
-                <ul class="right">
+                
+                
                     <li><a href="{% url 'kids_create' %}">Add a baby</a></li>
-                </ul>
-                <ul class="right">
+                
+                
                     <li><a href="/index">View All Kids</a></li>
+                
+                
+                    <li><a href="{% url 'logout' %}">Log Out</a></li>
+                
+                {% else %}
+                    <li><a href="{% url 'login' %}">Log In</a></li>
+                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                {% endif %}
                 </ul>
             </div>
         </nav>
